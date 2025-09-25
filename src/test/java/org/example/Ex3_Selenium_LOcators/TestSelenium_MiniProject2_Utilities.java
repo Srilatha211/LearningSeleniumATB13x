@@ -1,15 +1,18 @@
 package org.example.Ex3_Selenium_LOcators;
 
+
 import Utilities.Common_to_all;
 import io.qameta.allure.*;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 
-public class TestSelenium_17_Mini_Project2_Using_Uitilities extends Common_to_all {
+public class TestSelenium_MiniProject2_Utilities extends Common_to_all {
 
 
     @Owner("Srilatha")
@@ -29,26 +32,27 @@ public class TestSelenium_17_Mini_Project2_Using_Uitilities extends Common_to_al
         System.out.println(driver.getCurrentUrl());
         Assert.assertTrue(driver.getCurrentUrl().contains("free-trial"));
 
-        WebElement Buss_Email = driver.findElement(By.id("page-v1-step1-email"));
-        Buss_Email.sendKeys("abc");
 
-        WebElement check_Policy= driver.findElement(By.name("gdpr_consent_checkbox"));
+        WebElement email = driver.findElement(By.id("page-v1-step1-email"));
+        email.sendKeys("abc");
 
-        check_Policy.click();
-
-
-        //Here in case of tag nmae find element will always give u first element
-
-        //tag name is a bad approach u need to avoid bcz it gives multiple elements
+        WebElement checkbox_policy = driver.findElement(By.name("gdpr_consent_checkbox"));
+        checkbox_policy.click();
 
         WebElement button = driver.findElement(By.tagName("button"));
         button.click();
 
-        WebElement Err_msg = driver.findElement(By.className("invalid-reason"));
-        Assert.assertEquals(Err_msg.getText(),"The email address you entered is incorrect.");
+        WebElement error_msg = driver.findElement(By.className("invalid-reason"));
+        Assert.assertEquals(error_msg.getText(),"The email address you entered is incorrect.");
+
+
 
 closing_Browers(driver);
 
-    }
-}
 
+
+
+
+    }
+
+}
