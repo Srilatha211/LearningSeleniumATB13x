@@ -6,10 +6,11 @@ import org.testng.annotations.Test;
 
 public class Lab48_DataDriven_ActualReading_Excel {
 
-    @Test(dataProvider = "LoginData")
-    public  void test_vwo_login(String username,String password,String ER){
+    @Test(dataProvider = "getData")
+    public  void test_vwo_login(String username,String password){
+
         System.out.println("Running  ");
-        System.out.println(username + " - " + password +" - "  +ER);
+        System.out.println(username + " - " + password);
         System.out.println();
     }
     //Now to read the data from Excel we need to change the @DataProvider function
