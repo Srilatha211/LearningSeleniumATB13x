@@ -13,7 +13,7 @@ import java.util.List;
 
 import static org.openqa.selenium.support.locators.RelativeLocator.with;
 
-public class Lab40_RL_P3 extends Common_to_all {
+public class Lab41_RL_P3 extends Common_to_all {
 
     @Test
     public void test_AQI(){

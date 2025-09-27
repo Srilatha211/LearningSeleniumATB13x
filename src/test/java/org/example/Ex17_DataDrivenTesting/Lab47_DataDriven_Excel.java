@@ -3,7 +3,7 @@ package org.example.Ex17_DataDrivenTesting;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class Lab46_DataDriven_Parallel_Hardcode {
+public class Lab47_DataDriven_Excel {
 
     @Test(dataProvider = "LoginData")
     public  void test_vwo_login(String username,String password,String ER){
@@ -11,20 +11,19 @@ public class Lab46_DataDriven_Parallel_Hardcode {
         System.out.println(username + " - " + password +" - "  +ER);
         System.out.println();
     }
-    //here we can give name as Login
-    //can do Parallel Exection by adding as "parallel = true
+    //Now to read the data from Excel we need to change the @DataProvider function
 
-    @DataProvider(name = "LoginData" , parallel = true )
+
+    @DataProvider
     public Object[][] getData(){
-        return new Object[][]{
-                new Object[]{"admin@admin.com","pwd123","Expected Result 1"},
-                new Object[]{"admin@admin.com","pwd123","Expected Result 2"},
-                new Object[]{"admin@admin.com","pwd123","Expected Result 3"}
-        };
+        //Read from Excel file
+        //Convert this into 2D aray Object
+        //return the array
+        return null;
+
     }
-//Now to read the data from Excel we need to change the @DataProvider function
 
-
+//Need to create the Util Excel file
 
 
 }
