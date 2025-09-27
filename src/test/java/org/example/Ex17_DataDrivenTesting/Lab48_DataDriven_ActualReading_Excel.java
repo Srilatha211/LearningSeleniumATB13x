@@ -1,5 +1,6 @@
 package org.example.Ex17_DataDrivenTesting;
 
+import Utilities.UtilExcel;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -19,7 +20,7 @@ public class Lab48_DataDriven_ActualReading_Excel {
         //Read from Excel file
         //Convert this into 2D aray Object
         //return the array
-        return utilExcel.getdatafromExcel("sheet1");
+        return UtilExcel.getdatafromExcel("sheet1");
 
     }
 
